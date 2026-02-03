@@ -1736,7 +1736,6 @@ p {
   }
 }
 
-
 ```css
 /* :::SECTION:Hero::: */
 
@@ -2733,3 +2732,779 @@ header:has(.wp-block-navigation .is-menu-open) {
   border: 0;
 }
 
+/* ========================================
+   Section: Template Section
+   ======================================== */
+/* ===================================
+       CSS Custom Properties
+       =================================== */
+    :root {
+      --font-display: 'Instrument Serif', Georgia, serif;
+      --font-body: 'Libre Franklin', system-ui, sans-serif;
+      --transition-fast: 0.2s ease;
+      --transition-base: 0.3s ease;
+      --transition-smooth: 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* ===================================
+       Reset & Base
+       =================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--wp--preset--color--color-ink, #1a1f2e);
+      background-color: var(--wp--preset--color--color-cream, #f8f4eb);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, p {
+      margin: 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ===================================
+       Scroll Animations
+       =================================== */
+    .animate-on-scroll {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .js .animate-on-scroll:not(.is-visible) {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .js .animate-on-scroll {
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .js .animate-on-scroll.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===================================
+       404 Page Styles
+       =================================== */
+    .error-404 {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--wp--preset--color--color-ink, #1a1f2e);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .error-404::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('images/404-texture.jpg');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.05;
+      mix-blend-mode: overlay;
+      pointer-events: none;
+    }
+
+    /* Decorative Brush Stroke */
+    .error-404-stroke {
+      position: absolute;
+      top: 50%;
+      left: -15%;
+      width: 60%;
+      height: 120%;
+      transform: translateY(-50%) rotate(12deg);
+      background-image: url('http://localhost:8888/wp-content/uploads/2026/02/404-brushstroke.jpg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      opacity: 0.15;
+      pointer-events: none;
+      animation: strokeFloat 8s ease-in-out infinite;
+    }
+
+    @keyframes strokeFloat {
+      0%, 100% {
+        transform: translateY(-50%) rotate(12deg) translateX(0);
+      }
+      50% {
+        transform: translateY(-50%) rotate(12deg) translateX(15px);
+      }
+    }
+
+    /* Paint Splatters */
+    .error-404-splatter {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      animation: splatterFloat 6s ease-in-out infinite;
+    }
+
+    .error-404-splatter-1 {
+      top: 8%;
+      right: 12%;
+      width: 140px;
+      height: 140px;
+      background: radial-gradient(ellipse at 40% 45%, var(--wp--preset--color--color-gold-muted, #c9a227) 0%, transparent 55%);
+      opacity: 0.2;
+      filter: blur(20px);
+      animation-delay: 0s;
+    }
+
+    .error-404-splatter-2 {
+      bottom: 15%;
+      left: 8%;
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(ellipse at 55% 50%, var(--wp--preset--color--color-ember, #d64933) 0%, transparent 55%);
+      opacity: 0.15;
+      filter: blur(18px);
+      animation-delay: -2s;
+    }
+
+    .error-404-splatter-3 {
+      top: 25%;
+      left: 20%;
+      width: 80px;
+      height: 80px;
+      background: radial-gradient(ellipse at 50% 50%, var(--wp--preset--color--color-gold-light, #dab843) 0%, transparent 50%);
+      opacity: 0.12;
+      filter: blur(15px);
+      animation-delay: -4s;
+    }
+
+    .error-404-splatter-4 {
+      bottom: 25%;
+      right: 18%;
+      width: 120px;
+      height: 120px;
+      background: radial-gradient(ellipse at 45% 55%, var(--wp--preset--color--color-gold-muted, #c9a227) 0%, transparent 50%);
+      opacity: 0.18;
+      filter: blur(22px);
+      animation-delay: -1s;
+    }
+
+    .error-404-splatter-5 {
+      top: 60%;
+      right: 8%;
+      width: 60px;
+      height: 60px;
+      background: radial-gradient(ellipse at 50% 50%, var(--wp--preset--color--color-ember-glow, #e85a45) 0%, transparent 55%);
+      opacity: 0.1;
+      filter: blur(12px);
+      animation-delay: -3s;
+    }
+
+    @keyframes splatterFloat {
+      0%, 100% {
+        transform: translate(0, 0) scale(1);
+      }
+      33% {
+        transform: translate(8px, -5px) scale(1.05);
+      }
+      66% {
+        transform: translate(-5px, 8px) scale(0.95);
+      }
+    }
+
+    /* Large 404 Background Number */
+    .error-404-number {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: var(--font-display);
+      font-size: clamp(20rem, 45vw, 50rem);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--wp--preset--color--color-gold-muted, #c9a227);
+      opacity: 0.08;
+      line-height: 0.8;
+      letter-spacing: -0.05em;
+      pointer-events: none;
+      user-select: none;
+      z-index: 1;
+    }
+
+    /* Content Container */
+    .error-404-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: var(--wp--preset--spacing--50, 4rem) var(--wp--preset--spacing--40, 2rem);
+      max-width: 600px;
+    }
+
+    /* Main Heading */
+    .error-404-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 8vw, 4rem);
+      font-weight: 400;
+      color: var(--wp--preset--color--color-cream, #f8f4eb);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: var(--wp--preset--spacing--40, 2rem);
+    }
+
+    /* Decorative Divider */
+    .error-404-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--wp--preset--spacing--30, 1rem);
+      margin-bottom: var(--wp--preset--spacing--40, 2rem);
+    }
+
+    .error-404-divider-line {
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--wp--preset--color--color-gold-muted, #c9a227), transparent);
+    }
+
+    .error-404-divider-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--wp--preset--color--color-gold-muted, #c9a227);
+      border-radius: 50%;
+    }
+
+    /* Message Text */
+    .error-404-message {
+      font-size: var(--wp--preset--font-size--large, 1.125rem);
+      color: rgba(248, 244, 235, 0.75);
+      line-height: 1.8;
+      margin-bottom: var(--wp--preset--spacing--50, 4rem);
+    }
+
+    /* Buttons Container */
+    .error-404-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: var(--wp--preset--spacing--30, 1rem);
+      margin-bottom: var(--wp--preset--spacing--50, 4rem);
+    }
+
+    /* Primary Button */
+    .error-404-btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--wp--preset--spacing--20, 0.5rem);
+      padding: var(--wp--preset--spacing--30, 1rem) var(--wp--preset--spacing--40, 2rem);
+      background: var(--wp--preset--color--color-gold-muted, #c9a227);
+      color: var(--wp--preset--color--color-ink, #1a1f2e);
+      font-family: var(--font-body);
+      font-size: var(--wp--preset--font-size--small, 0.8125rem);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      position: relative;
+      overflow: hidden;
+      transition: transform var(--transition-base), box-shadow var(--transition-base);
+    }
+
+    .error-404-btn-primary::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--wp--preset--color--color-gold-light, #dab843);
+      transform: translateX(-100%);
+      transition: transform var(--transition-smooth);
+    }
+
+    .error-404-btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(201, 162, 39, 0.35);
+    }
+
+    .error-404-btn-primary:hover::before {
+      transform: translateX(0);
+    }
+
+    .error-404-btn-primary span {
+      position: relative;
+      z-index: 1;
+    }
+
+    .error-404-btn-primary:focus {
+      outline: 2px solid var(--wp--preset--color--color-cream, #f8f4eb);
+      outline-offset: 2px;
+    }
+
+    /* Secondary Button */
+    .error-404-btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--wp--preset--spacing--20, 0.5rem);
+      padding: var(--wp--preset--spacing--30, 1rem) var(--wp--preset--spacing--40, 2rem);
+      color: var(--wp--preset--color--color-cream, #f8f4eb);
+      font-size: var(--wp--preset--font-size--small, 0.8125rem);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      border: 2px solid rgba(248, 244, 235, 0.5);
+      background: transparent;
+      transition: all var(--transition-base);
+    }
+
+    .error-404-btn-secondary:hover {
+      background: var(--wp--preset--color--color-cream, #f8f4eb);
+      color: var(--wp--preset--color--color-ink, #1a1f2e);
+      border-color: var(--wp--preset--color--color-cream, #f8f4eb);
+    }
+
+    .error-404-btn-secondary:focus {
+      outline: 2px solid var(--wp--preset--color--color-gold-muted, #c9a227);
+      outline-offset: 2px;
+    }
+
+    /* Bottom Splatter Accent */
+    .error-404-accent {
+      width: 50px;
+      height: 50px;
+      margin: 0 auto;
+      background: radial-gradient(ellipse at 50% 50%, var(--wp--preset--color--color-gold-muted, #c9a227) 0%, transparent 60%);
+      opacity: 0.35;
+      filter: blur(8px);
+      animation: accentPulse 3s ease-in-out infinite;
+    }
+
+    @keyframes accentPulse {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 0.35;
+      }
+      50% {
+        transform: scale(1.15);
+        opacity: 0.5;
+      }
+    }
+
+    /* ===================================
+       WordPress Block Adjustments
+       =================================== */
+
+    /* Button wrapper reset */
+    .wp-block-button.error-404-btn-primary,
+    .wp-block-button.error-404-btn-secondary {
+      padding: 0;
+      background: none;
+      border: none;
+      margin: 0;
+      box-shadow: none;
+    }
+
+    .wp-block-button.error-404-btn-primary .wp-block-button__link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--wp--preset--spacing--20, 0.5rem);
+      padding: var(--wp--preset--spacing--30, 1rem) var(--wp--preset--spacing--40, 2rem);
+      background: var(--wp--preset--color--color-gold-muted, #c9a227);
+      color: var(--wp--preset--color--color-ink, #1a1f2e);
+      font-family: var(--font-body);
+      font-size: var(--wp--preset--font-size--small, 0.8125rem);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      position: relative;
+      overflow: hidden;
+      transition: transform var(--transition-base), box-shadow var(--transition-base);
+    }
+
+    .wp-block-button.error-404-btn-primary .wp-block-button__link::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--wp--preset--color--color-gold-light, #dab843);
+      transform: translateX(-100%);
+      transition: transform var(--transition-smooth);
+    }
+
+    .wp-block-button.error-404-btn-primary .wp-block-button__link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(201, 162, 39, 0.35);
+    }
+
+    .wp-block-button.error-404-btn-primary .wp-block-button__link:hover::before {
+      transform: translateX(0);
+    }
+
+    .wp-block-button.error-404-btn-primary .wp-block-button__link span {
+      position: relative;
+      z-index: 1;
+    }
+
+    .wp-block-button.error-404-btn-primary .wp-block-button__link:focus {
+      outline: 2px solid var(--wp--preset--color--color-cream, #f8f4eb);
+      outline-offset: 2px;
+    }
+
+    .wp-block-button.error-404-btn-secondary .wp-block-button__link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--wp--preset--spacing--20, 0.5rem);
+      padding: var(--wp--preset--spacing--30, 1rem) var(--wp--preset--spacing--40, 2rem);
+      color: var(--wp--preset--color--color-cream, #f8f4eb);
+      font-size: var(--wp--preset--font-size--small, 0.8125rem);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      border: 2px solid rgba(248, 244, 235, 0.5);
+      background: transparent;
+      transition: all var(--transition-base);
+    }
+
+    .wp-block-button.error-404-btn-secondary .wp-block-button__link:hover {
+      background: var(--wp--preset--color--color-cream, #f8f4eb);
+      color: var(--wp--preset--color--color-ink, #1a1f2e);
+      border-color: var(--wp--preset--color--color-cream, #f8f4eb);
+    }
+
+    .wp-block-button.error-404-btn-secondary .wp-block-button__link:focus {
+      outline: 2px solid var(--wp--preset--color--color-gold-muted, #c9a227);
+      outline-offset: 2px;
+    }
+
+    /* Editor flex fix for buttons */
+    .editor-styles-wrapper .error-404-buttons > .block-editor-block-list__block {
+      margin: 0 !important;
+    }
+
+    .editor-styles-wrapper .error-404-buttons {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: var(--wp--preset--spacing--30, 1rem) !important;
+    }
+
+    /* Editor divider flex fix */
+    .editor-styles-wrapper .error-404-divider > .block-editor-block-list__block {
+      margin: 0 !important;
+    }
+
+    .editor-styles-wrapper .error-404-divider {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: var(--wp--preset--spacing--30, 1rem) !important;
+    }
+
+    /* Absolute positioning editor fixes */
+    .editor-styles-wrapper .error-404-stroke {
+      position: absolute !important;
+    }
+
+    .editor-styles-wrapper .error-404-splatter {
+      position: absolute !important;
+    }
+
+    .editor-styles-wrapper .error-404-number {
+      position: absolute !important;
+    }
+
+    /* Margin parity */
+    :root :where(.error-404-title) {
+      margin-block-end: var(--wp--preset--spacing--40, 2rem);
+    }
+
+    .editor-styles-wrapper .error-404-title {
+      margin-block-end: var(--wp--preset--spacing--40, 2rem) !important;
+    }
+
+    :root :where(.error-404-divider) {
+      margin-block-end: var(--wp--preset--spacing--40, 2rem);
+    }
+
+    .editor-styles-wrapper .error-404-divider {
+      margin-block-end: var(--wp--preset--spacing--40, 2rem) !important;
+    }
+
+    :root :where(.error-404-message) {
+      margin-block-end: var(--wp--preset--spacing--50, 4rem);
+    }
+
+    .editor-styles-wrapper .error-404-message {
+      margin-block-end: var(--wp--preset--spacing--50, 4rem) !important;
+    }
+
+    :root :where(.error-404-buttons) {
+      margin-block-end: var(--wp--preset--spacing--50, 4rem);
+    }
+
+    .editor-styles-wrapper .error-404-buttons {
+      margin-block-end: var(--wp--preset--spacing--50, 4rem) !important;
+    }
+
+    /* ===================================
+       Responsive Design
+       =================================== */
+    @media (max-width: 768px) {
+      .error-404-content {
+        padding: var(--wp--preset--spacing--40, 2rem) var(--wp--preset--spacing--30, 1rem);
+      }
+
+      .error-404-stroke {
+        left: -30%;
+        width: 80%;
+        opacity: 0.1;
+      }
+
+      .error-404-splatter-1 {
+        top: 5%;
+        right: 5%;
+        width: 100px;
+        height: 100px;
+      }
+
+      .error-404-splatter-2 {
+        bottom: 10%;
+        left: 5%;
+        width: 80px;
+        height: 80px;
+      }
+
+      .error-404-splatter-3,
+      .error-404-splatter-5 {
+        display: none;
+      }
+
+      .error-404-splatter-4 {
+        bottom: 20%;
+        right: 10%;
+        width: 90px;
+        height: 90px;
+      }
+
+      .error-404-buttons {
+        flex-direction: column;
+        gap: var(--wp--preset--spacing--20, 0.5rem);
+      }
+
+      .error-404-btn-primary,
+      .error-404-btn-secondary,
+      .wp-block-button.error-404-btn-primary .wp-block-button__link,
+      .wp-block-button.error-404-btn-secondary .wp-block-button__link {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .error-404-number {
+        font-size: 18rem;
+        opacity: 0.06;
+      }
+
+      .error-404-title {
+        font-size: 2rem;
+      }
+
+      .error-404-message {
+        font-size: var(--wp--preset--font-size--medium, 1rem);
+      }
+
+      .error-404-divider-line {
+        width: 40px;
+      }
+
+      .error-404-accent {
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    /* Admin bar offset */
+    .admin-bar .error-404 {
+      min-height: calc(100vh - 32px);
+    }
+
+    @media screen and (max-width: 782px) {
+      .admin-bar .error-404 {
+        min-height: calc(100vh - 46px);
+      }
+    }
+
+/* WordPress Block Adjustments */
+/* ===================================
+   404 Page Adjustments
+   =================================== */
+
+/* Button wrapper resets - baseline handles generic .wp-block-button, but we need specific class resets */
+.wp-block-button.error-404-btn-primary,
+.wp-block-button.error-404-btn-secondary {
+  padding: 0;
+  background: none;
+  border: none;
+  margin: 0;
+  box-shadow: none;
+}
+
+/* Primary button link styles - plain selector to override WordPress defaults */
+.wp-block-button.error-404-btn-primary .wp-block-button__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--wp--preset--spacing--20, 0.5rem);
+  padding: var(--wp--preset--spacing--30, 1rem) var(--wp--preset--spacing--40, 2rem);
+  background: var(--wp--preset--color--color-gold-muted, #c9a227);
+  color: var(--wp--preset--color--color-ink, #1a1f2e);
+  font-family: var(--font-body);
+  font-size: var(--wp--preset--font-size--small, 0.8125rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.wp-block-button.error-404-btn-primary .wp-block-button__link::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--wp--preset--color--color-gold-light, #dab843);
+  transform: translateX(-100%);
+  transition: transform var(--transition-smooth);
+}
+
+.wp-block-button.error-404-btn-primary .wp-block-button__link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(201, 162, 39, 0.35);
+}
+
+.wp-block-button.error-404-btn-primary .wp-block-button__link:hover::before {
+  transform: translateX(0);
+}
+
+.wp-block-button.error-404-btn-primary .wp-block-button__link span {
+  position: relative;
+  z-index: 1;
+}
+
+.wp-block-button.error-404-btn-primary .wp-block-button__link:focus {
+  outline: 2px solid var(--wp--preset--color--color-cream, #f8f4eb);
+  outline-offset: 2px;
+}
+
+/* Secondary button link styles - plain selector to override WordPress defaults */
+.wp-block-button.error-404-btn-secondary .wp-block-button__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--wp--preset--spacing--20, 0.5rem);
+  padding: var(--wp--preset--spacing--30, 1rem) var(--wp--preset--spacing--40, 2rem);
+  color: var(--wp--preset--color--color-cream, #f8f4eb);
+  font-size: var(--wp--preset--font-size--small, 0.8125rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border: 2px solid rgba(248, 244, 235, 0.5);
+  background: transparent;
+  transition: all var(--transition-base);
+}
+
+.wp-block-button.error-404-btn-secondary .wp-block-button__link:hover {
+  background: var(--wp--preset--color--color-cream, #f8f4eb);
+  color: var(--wp--preset--color--color-ink, #1a1f2e);
+  border-color: var(--wp--preset--color--color-cream, #f8f4eb);
+}
+
+.wp-block-button.error-404-btn-secondary .wp-block-button__link:focus {
+  outline: 2px solid var(--wp--preset--color--color-gold-muted, #c9a227);
+  outline-offset: 2px;
+}
+
+/* Margin parity - frontend low specificity */
+:root :where(.error-404-title) {
+  margin-block-end: var(--wp--preset--spacing--40, 2rem);
+}
+
+:root :where(.error-404-divider) {
+  margin-block-end: var(--wp--preset--spacing--40, 2rem);
+}
+
+:root :where(.error-404-message) {
+  margin-block-end: var(--wp--preset--spacing--50, 4rem);
+}
+
+:root :where(.error-404-buttons) {
+  margin-block-end: var(--wp--preset--spacing--50, 4rem);
+}
+
+/* Editor margin parity - higher specificity to overcome editor defaults */
+.editor-styles-wrapper .error-404-title {
+  margin-block-end: var(--wp--preset--spacing--40, 2rem) !important;
+}
+
+.editor-styles-wrapper .error-404-divider {
+  margin-block-end: var(--wp--preset--spacing--40, 2rem) !important;
+}
+
+.editor-styles-wrapper .error-404-message {
+  margin-block-end: var(--wp--preset--spacing--50, 4rem) !important;
+}
+
+.editor-styles-wrapper .error-404-buttons {
+  margin-block-end: var(--wp--preset--spacing--50, 4rem) !important;
+}
+
+/* Editor flex container fixes - buttons container */
+.editor-styles-wrapper .error-404-buttons > .block-editor-block-list__block {
+  margin: 0 !important;
+}
+
+.editor-styles-wrapper .error-404-buttons {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: var(--wp--preset--spacing--30, 1rem) !important;
+}
+
+/* Editor flex container fixes - divider */
+.editor-styles-wrapper .error-404-divider > .block-editor-block-list__block {
+  margin: 0 !important;
+}
+
+.editor-styles-wrapper .error-404-divider {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: var(--wp--preset--spacing--30, 1rem) !important;
+}
+
+/* Editor absolute positioning fixes */
+.editor-styles-wrapper .error-404-stroke {
+  position: absolute !important;
+}
+
+.editor-styles-wrapper .error-404-splatter {
+  position: absolute !important;
+}
+
+.editor-styles-wrapper .error-404-number {
+  position: absolute !important;
+}
+
+/* Responsive adjustments for button width */
+@media (max-width: 768px) {
+  .wp-block-button.error-404-btn-primary .wp-block-button__link,
+  .wp-block-button.error-404-btn-secondary .wp-block-button__link {
+    width: 100%;
+    justify-content: center;
+  }
+}

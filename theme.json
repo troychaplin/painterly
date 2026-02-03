@@ -497,21 +497,6 @@
 					"fontFamily": "\"Libre Franklin\", sans-serif",
 					"name": "Libre Franklin",
 					"slug": "libre-franklin"
-				},
-				{
-					"fontFace": [
-						{
-							"fontFamily": "\"Arial Unicode MS\"",
-							"fontStyle": "normal",
-							"fontWeight": "400",
-							"src": [
-								"file:./assets/fonts/arial-unicode-ms/arial-unicode-ms-400-normal.ttf"
-							]
-						}
-					],
-					"fontFamily": "\"Arial Unicode MS\"",
-					"name": "Arial Unicode MS",
-					"slug": "arial-unicode-ms"
 				}
 			],
 			"fontSizes": [
