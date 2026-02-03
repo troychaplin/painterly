@@ -1,0 +1,748 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.9/theme.json",
+	"version": 3,
+	"settings": {
+		"appearanceTools": true,
+		"blocks": {
+			"core/button": {
+				"border": {
+					"radius": true
+				},
+				"color": {
+					"custom": true,
+					"gradients": [],
+					"palette": []
+				}
+			},
+			"core/cover": {
+				"color": {
+					"duotone": [],
+					"palette": []
+				}
+			},
+			"core/group": {
+				"color": {
+					"background": true,
+					"gradients": [],
+					"palette": []
+				},
+				"spacing": {
+					"margin": true,
+					"padding": true
+				}
+			},
+			"core/heading": {
+				"color": {
+					"palette": [],
+					"text": true
+				},
+				"typography": {
+					"fontFamilies": [],
+					"fontSizes": [],
+					"letterSpacing": true
+				}
+			},
+			"core/image": {
+				"border": {
+					"radius": true
+				},
+				"color": {
+					"duotone": []
+				}
+			},
+			"core/paragraph": {
+				"color": {
+					"background": true,
+					"text": true
+				},
+				"typography": {
+					"fontSizes": [],
+					"lineHeight": true
+				}
+			}
+		},
+		"color": {
+			"custom": true,
+			"customDuotone": true,
+			"customGradient": true,
+			"defaultDuotone": false,
+			"defaultGradients": false,
+			"defaultPalette": false,
+			"duotone": [
+				{
+					"colors": [
+						"#0f1219",
+						"#f8f4eb"
+					],
+					"name": "Primary Contrast",
+					"slug": "primary-contrast"
+				},
+				{
+					"colors": [
+						"#0f1219",
+						"#e85a45"
+					],
+					"name": "Accent Dark",
+					"slug": "accent-dark"
+				},
+				{
+					"colors": [
+						"#e85a45",
+						"#f8f4eb"
+					],
+					"name": "Accent Light",
+					"slug": "accent-light"
+				}
+			],
+			"gradients": [
+				{
+					"gradient": "linear-gradient(135deg, rgba(214, 73, 51, 0.1) 0%, transparent 50%)",
+					"name": "Linear Gradient 1",
+					"slug": "extracted-linear-1"
+				},
+				{
+					"gradient": "linear-gradient(to top, rgba(26, 31, 46, 0.9) 0%, transparent 60%)",
+					"name": "Linear Gradient 2",
+					"slug": "extracted-linear-2"
+				}
+			],
+			"palette": [
+				{
+					"color": "#1a1f2e",
+					"name": "Color Ink",
+					"slug": "color-ink"
+				},
+				{
+					"color": "#0f1219",
+					"name": "Color Ink Deep",
+					"slug": "color-ink-deep"
+				},
+				{
+					"color": "#2a3144",
+					"name": "Color Ink Light",
+					"slug": "color-ink-light"
+				},
+				{
+					"color": "#3d4456",
+					"name": "Color Ink Muted",
+					"slug": "color-ink-muted"
+				},
+				{
+					"color": "#f8f4eb",
+					"name": "Color Cream",
+					"slug": "color-cream"
+				},
+				{
+					"color": "#ede8dc",
+					"name": "Color Cream Dark",
+					"slug": "color-cream-dark"
+				},
+				{
+					"color": "#d64933",
+					"name": "Color Ember",
+					"slug": "color-ember"
+				},
+				{
+					"color": "#e85a45",
+					"name": "Color Ember Glow",
+					"slug": "color-ember-glow"
+				},
+				{
+					"color": "#c9a227",
+					"name": "Color Gold Muted",
+					"slug": "color-gold-muted"
+				},
+				{
+					"color": "#dab843",
+					"name": "Color Gold Light",
+					"slug": "color-gold-light"
+				},
+				{
+					"color": "#6b7280",
+					"name": "Color Slate",
+					"slug": "color-slate"
+				},
+				{
+					"color": "#9ca3af",
+					"name": "Color Slate Light",
+					"slug": "color-slate-light"
+				}
+			]
+		},
+		"custom": {
+			"color": {
+				"colorCreamMuted": "rgba(248, 244, 235, 0.7)"
+			},
+			"fontWeight": {
+				"black": "900",
+				"bold": "700",
+				"extrabold": "800",
+				"extralight": "200",
+				"light": "300",
+				"medium": "500",
+				"normal": "400",
+				"semibold": "600",
+				"thin": "100"
+			},
+			"lineHeight": {
+				"loose": "2",
+				"none": "1",
+				"normal": "1.5",
+				"relaxed": "1.625",
+				"snug": "1.25",
+				"tight": "1.1"
+			}
+		},
+		"layout": {
+			"allowEditing": false,
+			"contentSize": "1200px",
+			"wideSize": "1400px"
+		},
+		"shadow": {
+			"defaultPresets": false,
+			"presets": [
+				{
+					"name": "Shadow 1",
+					"shadow": "0 8px 24px rgba(214, 73, 51, 0.3)",
+					"slug": "extracted-1"
+				},
+				{
+					"name": "Shadow 2",
+					"shadow": "0 20px 40px rgba(0, 0, 0, 0.3)",
+					"slug": "extracted-2"
+				},
+				{
+					"name": "Shadow 3",
+					"shadow": "0 24px 48px rgba(26, 31, 46, 0.15)",
+					"slug": "extracted-3"
+				}
+			]
+		},
+		"spacing": {
+			"blockGap": null,
+			"customSpacingSize": true,
+			"defaultSpacingSizes": false,
+			"spacingSizes": [
+				{
+					"name": "X-Small",
+					"size": "0.5rem",
+					"slug": "20"
+				},
+				{
+					"name": "Small",
+					"size": "1rem",
+					"slug": "30"
+				},
+				{
+					"name": "Medium",
+					"size": "2rem",
+					"slug": "40"
+				},
+				{
+					"name": "Large",
+					"size": "4rem",
+					"slug": "50"
+				},
+				{
+					"name": "X-Large",
+					"size": "6rem",
+					"slug": "60"
+				},
+				{
+					"name": "Spacing 65",
+					"size": "8rem",
+					"slug": "65"
+				}
+			],
+			"units": [
+				"px",
+				"em",
+				"rem",
+				"%",
+				"vh",
+				"vw"
+			]
+		},
+		"typography": {
+			"customFontSize": true,
+			"defaultFontSizes": false,
+			"fluid": true,
+			"fontFamilies": [
+				{
+					"fontFace": [
+						{
+							"fontFamily": "Instrument Serif",
+							"fontStyle": "italic",
+							"fontWeight": "400",
+							"src": [
+								"file:./assets/fonts/instrument-serif-400-italic-latin-ext.woff2"
+							],
+							"unicodeRange": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF"
+						},
+						{
+							"fontFamily": "Instrument Serif",
+							"fontStyle": "italic",
+							"fontWeight": "400",
+							"src": [
+								"file:./assets/fonts/instrument-serif-400-italic-latin.woff2"
+							],
+							"unicodeRange": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+						},
+						{
+							"fontFamily": "Instrument Serif",
+							"fontStyle": "normal",
+							"fontWeight": "400",
+							"src": [
+								"file:./assets/fonts/instrument-serif-400-latin-ext.woff2"
+							],
+							"unicodeRange": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF"
+						},
+						{
+							"fontFamily": "Instrument Serif",
+							"fontStyle": "normal",
+							"fontWeight": "400",
+							"src": [
+								"file:./assets/fonts/instrument-serif-400-latin.woff2"
+							],
+							"unicodeRange": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+						}
+					],
+					"fontFamily": "\"Instrument Serif\", sans-serif",
+					"name": "Instrument Serif",
+					"slug": "instrument-serif"
+				},
+				{
+					"fontFace": [
+						{
+							"fontFamily": "Libre Franklin",
+							"fontStyle": "normal",
+							"fontWeight": "400",
+							"src": [
+								"file:./assets/fonts/libre-franklin-400-cyrillic-ext.woff2"
+							],
+							"unicodeRange": "U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+						},
+						{
+							"fontFamily": "Libre Franklin",
+							"fontStyle": "normal",
+							"fontWeight": "400",
+							"src": [
+								"file:./assets/fonts/libre-franklin-400-cyrillic.woff2"
+							],
+							"unicodeRange": "U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116"
+						},
+						{
+							"fontFamily": "Libre Franklin",
+							"fontStyle": "normal",
+							"fontWeight": "400",
+							"src": [
+								"file:./assets/fonts/libre-franklin-400-vietnamese.woff2"
+							],
+							"unicodeRange": "U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB"
+						},
+						{
+							"fontFamily": "Libre Franklin",
+							"fontStyle": "normal",
+							"fontWeight": "400",
+							"src": [
+								"file:./assets/fonts/libre-franklin-400-latin-ext.woff2"
+							],
+							"unicodeRange": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF"
+						},
+						{
+							"fontFamily": "Libre Franklin",
+							"fontStyle": "normal",
+							"fontWeight": "400",
+							"src": [
+								"file:./assets/fonts/libre-franklin-400-latin.woff2"
+							],
+							"unicodeRange": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+						},
+						{
+							"fontFamily": "Libre Franklin",
+							"fontStyle": "normal",
+							"fontWeight": "500",
+							"src": [
+								"file:./assets/fonts/libre-franklin-500-cyrillic-ext.woff2"
+							],
+							"unicodeRange": "U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+						},
+						{
+							"fontFamily": "Libre Franklin",
+							"fontStyle": "normal",
+							"fontWeight": "500",
+							"src": [
+								"file:./assets/fonts/libre-franklin-500-cyrillic.woff2"
+							],
+							"unicodeRange": "U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116"
+						},
+						{
+							"fontFamily": "Libre Franklin",
+							"fontStyle": "normal",
+							"fontWeight": "500",
+							"src": [
+								"file:./assets/fonts/libre-franklin-500-vietnamese.woff2"
+							],
+							"unicodeRange": "U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB"
+						},
+						{
+							"fontFamily": "Libre Franklin",
+							"fontStyle": "normal",
+							"fontWeight": "500",
+							"src": [
+								"file:./assets/fonts/libre-franklin-500-latin-ext.woff2"
+							],
+							"unicodeRange": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF"
+						},
+						{
+							"fontFamily": "Libre Franklin",
+							"fontStyle": "normal",
+							"fontWeight": "500",
+							"src": [
+								"file:./assets/fonts/libre-franklin-500-latin.woff2"
+							],
+							"unicodeRange": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+						},
+						{
+							"fontFamily": "Libre Franklin",
+							"fontStyle": "normal",
+							"fontWeight": "600",
+							"src": [
+								"file:./assets/fonts/libre-franklin-600-cyrillic-ext.woff2"
+							],
+							"unicodeRange": "U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+						},
+						{
+							"fontFamily": "Libre Franklin",
+							"fontStyle": "normal",
+							"fontWeight": "600",
+							"src": [
+								"file:./assets/fonts/libre-franklin-600-cyrillic.woff2"
+							],
+							"unicodeRange": "U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116"
+						},
+						{
+							"fontFamily": "Libre Franklin",
+							"fontStyle": "normal",
+							"fontWeight": "600",
+							"src": [
+								"file:./assets/fonts/libre-franklin-600-vietnamese.woff2"
+							],
+							"unicodeRange": "U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB"
+						},
+						{
+							"fontFamily": "Libre Franklin",
+							"fontStyle": "normal",
+							"fontWeight": "600",
+							"src": [
+								"file:./assets/fonts/libre-franklin-600-latin-ext.woff2"
+							],
+							"unicodeRange": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF"
+						},
+						{
+							"fontFamily": "Libre Franklin",
+							"fontStyle": "normal",
+							"fontWeight": "600",
+							"src": [
+								"file:./assets/fonts/libre-franklin-600-latin.woff2"
+							],
+							"unicodeRange": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+						},
+						{
+							"fontFamily": "Libre Franklin",
+							"fontStyle": "normal",
+							"fontWeight": "700",
+							"src": [
+								"file:./assets/fonts/libre-franklin-700-cyrillic-ext.woff2"
+							],
+							"unicodeRange": "U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+						},
+						{
+							"fontFamily": "Libre Franklin",
+							"fontStyle": "normal",
+							"fontWeight": "700",
+							"src": [
+								"file:./assets/fonts/libre-franklin-700-cyrillic.woff2"
+							],
+							"unicodeRange": "U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116"
+						},
+						{
+							"fontFamily": "Libre Franklin",
+							"fontStyle": "normal",
+							"fontWeight": "700",
+							"src": [
+								"file:./assets/fonts/libre-franklin-700-vietnamese.woff2"
+							],
+							"unicodeRange": "U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB"
+						},
+						{
+							"fontFamily": "Libre Franklin",
+							"fontStyle": "normal",
+							"fontWeight": "700",
+							"src": [
+								"file:./assets/fonts/libre-franklin-700-latin-ext.woff2"
+							],
+							"unicodeRange": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF"
+						},
+						{
+							"fontFamily": "Libre Franklin",
+							"fontStyle": "normal",
+							"fontWeight": "700",
+							"src": [
+								"file:./assets/fonts/libre-franklin-700-latin.woff2"
+							],
+							"unicodeRange": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+						}
+					],
+					"fontFamily": "\"Libre Franklin\", sans-serif",
+					"name": "Libre Franklin",
+					"slug": "libre-franklin"
+				},
+				{
+					"fontFace": [
+						{
+							"fontFamily": "\"Arial Unicode MS\"",
+							"fontStyle": "normal",
+							"fontWeight": "400",
+							"src": [
+								"file:./assets/fonts/arial-unicode-ms/arial-unicode-ms-400-normal.ttf"
+							]
+						}
+					],
+					"fontFamily": "\"Arial Unicode MS\"",
+					"name": "Arial Unicode MS",
+					"slug": "arial-unicode-ms"
+				}
+			],
+			"fontSizes": [
+				{
+					"name": "Small",
+					"size": "0.8125rem",
+					"slug": "small"
+				},
+				{
+					"name": "Medium",
+					"size": "1rem",
+					"slug": "medium"
+				},
+				{
+					"name": "Large",
+					"size": "1.125rem",
+					"slug": "large"
+				},
+				{
+					"name": "Extra Large",
+					"size": "1.25rem",
+					"slug": "x-large"
+				},
+				{
+					"name": "2X Large",
+					"size": "1.5rem",
+					"slug": "xx-large"
+				},
+				{
+					"fluid": {
+						"max": "2.25rem",
+						"min": "1.75rem"
+					},
+					"name": "Huge",
+					"size": "2.25rem",
+					"slug": "huge"
+				},
+				{
+					"fluid": {
+						"max": "3rem",
+						"min": "2rem"
+					},
+					"name": "X Large 2",
+					"size": "3rem",
+					"slug": "x-large-2"
+				},
+				{
+					"fluid": {
+						"max": "9rem",
+						"min": "3.5rem"
+					},
+					"name": "Gigantic",
+					"size": "9rem",
+					"slug": "gigantic"
+				}
+			]
+		},
+		"useRootPaddingAwareAlignments": true
+	},
+	"styles": {
+		"blocks": {
+			"core/code": {
+				"color": {
+					"background": "transparent"
+				},
+				"spacing": {
+					"margin": {
+						"bottom": "0",
+						"top": "0"
+					},
+					"padding": {
+						"bottom": "0",
+						"left": "0",
+						"right": "0",
+						"top": "0"
+					}
+				},
+				"typography": {
+					"fontFamily": "inherit",
+					"fontSize": "inherit"
+				}
+			},
+			"core/details": {
+				"spacing": {
+					"margin": {
+						"bottom": "0",
+						"top": "0"
+					}
+				}
+			},
+			"core/list": {
+				"spacing": {
+					"margin": {
+						"bottom": "0",
+						"top": "0"
+					},
+					"padding": {
+						"left": "0"
+					}
+				},
+				"typography": {
+					"fontSize": "inherit",
+					"lineHeight": "inherit"
+				}
+			},
+			"core/navigation": {
+				"typography": {
+					"fontFamily": "inherit",
+					"fontSize": "inherit",
+					"lineHeight": "inherit"
+				}
+			},
+			"core/navigation-link": {
+				"typography": {
+					"fontFamily": "inherit",
+					"fontSize": "inherit"
+				}
+			},
+			"core/quote": {
+				"border": {
+					"left": {
+						"color": "var(--wp--preset--color--color-ink)",
+						"style": "solid",
+						"width": "4px"
+					}
+				},
+				"spacing": {
+					"padding": {
+						"left": "var(--wp--preset--spacing--40, 1.5rem)"
+					}
+				}
+			},
+			"core/separator": {
+				"border": {
+					"style": "none",
+					"width": "0"
+				},
+				"spacing": {
+					"margin": {
+						"bottom": "0",
+						"top": "0"
+					}
+				}
+			},
+			"core/table": {
+				"spacing": {
+					"margin": {
+						"bottom": "0",
+						"top": "0"
+					}
+				}
+			}
+		},
+		"css": ".post-type-page .editor-post-title { display: none !important; }\n.post-type-post.editor-styles-wrapper { padding: 2rem; }\n.post-type-post .editor-post-title__input { font-size: 2.5rem; }",
+		"elements": {
+			"button": {
+				":focus": {
+					"outline": {
+						"offset": "2px",
+						"style": "solid",
+						"width": "2px"
+					}
+				},
+				":hover": {
+					"color": {
+						"background": "inherit",
+						"text": "inherit"
+					}
+				},
+				"border": {
+					"radius": "0",
+					"style": "none",
+					"width": "0"
+				},
+				"typography": {
+					"fontFamily": "inherit",
+					"fontSize": "inherit",
+					"lineHeight": "inherit"
+				}
+			},
+			"heading": {
+				"color": {
+					"text": "inherit"
+				},
+				"typography": {
+					"fontFamily": "inherit",
+					"fontWeight": "inherit",
+					"lineHeight": "inherit"
+				}
+			},
+			"link": {
+				":focus": {
+					"outline": {
+						"offset": "2px",
+						"style": "solid",
+						"width": "2px"
+					}
+				},
+				":hover": {
+					"color": {
+						"text": "inherit"
+					},
+					"typography": {
+						"textDecoration": "underline"
+					}
+				},
+				"color": {
+					"text": "inherit"
+				}
+			}
+		},
+		"spacing": {
+			"blockGap": "0",
+			"padding": {
+				"bottom": "0",
+				"left": "0",
+				"right": "0",
+				"top": "0"
+			}
+		}
+	},
+	"templateParts": [
+		{
+			"area": "header",
+			"name": "header",
+			"title": "Header"
+		},
+		{
+			"area": "footer",
+			"name": "footer",
+			"title": "Footer"
+		}
+	]
+}
