@@ -194,9 +194,8 @@
 			}
 		},
 		"layout": {
-			"allowEditing": false,
-			"contentSize": "1200px",
-			"wideSize": "1400px"
+			"contentSize": "768px",
+			"wideSize": "1280px"
 		},
 		"shadow": {
 			"defaultPresets": false,
@@ -650,7 +649,7 @@
 				}
 			}
 		},
-		"css": ".post-type-page .editor-post-title { display: none !important; }\n.post-type-post.editor-styles-wrapper { padding: 2rem; }\n.post-type-post .editor-post-title__input { font-size: 2.5rem; }",
+		"css": ".post-type-post.editor-styles-wrapper { padding: 2rem; }\n.post-type-post .editor-post-title__input { font-size: 2.5rem; }",
 		"elements": {
 			"button": {
 				":focus": {

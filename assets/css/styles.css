@@ -186,26 +186,62 @@ p {
 
 /* :::SECTION:Hero::: */
 .hero {
-  min-height: 100vh;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  background-color: var(--wp--preset--color--color-ink);
-  color: var(--wp--preset--color--color-cream);
-  position: relative;
-  overflow: hidden;
-}
-
+      min-height: auto;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      background-color: #0a0c10;
+      color: var(--wp--preset--color--color-cream);
+      position: relative;
+      overflow: hidden;
+      max-width: var(--extra-wide-size);
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    /* Hero 100vh height for larger screens */
+    @media (min-width: 769px) {
+      .hero {
+        min-height: 100vh;
+      }
+    }
 .hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url('images/hero-texture.jpg');
-  background-size: cover;
-  background-position: center;
-  opacity: 0.06;
-  mix-blend-mode: overlay;
-  pointer-events: none;
-}
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: 
+        /* Cobalt blue ink splash - top left */
+        radial-gradient(ellipse 60% 80% at 15% 20%, rgba(30, 64, 175, 0.4) 0%, rgba(30, 64, 175, 0.15) 30%, transparent 60%),
+        /* Burnt orange nebula - center right */
+        radial-gradient(ellipse 70% 90% at 80% 45%, rgba(194, 65, 12, 0.35) 0%, rgba(194, 65, 12, 0.1) 35%, transparent 65%),
+        /* Golden yellow accent - bottom left */
+        radial-gradient(ellipse 50% 60% at 25% 75%, rgba(202, 138, 4, 0.3) 0%, rgba(202, 138, 4, 0.08) 40%, transparent 70%),
+        /* Secondary cobalt splash - bottom right */
+        radial-gradient(ellipse 55% 65% at 85% 80%, rgba(37, 99, 235, 0.25) 0%, transparent 50%),
+        /* Deep space gradient base */
+        linear-gradient(180deg, #0a0c10 0%, #0f1219 50%, #0a0c10 100%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    
+    /* Ink drip/splash effect layer */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        /* Dramatic ink drip from top */
+        radial-gradient(ellipse 25% 45% at 30% 0%, rgba(30, 64, 175, 0.5) 0%, rgba(30, 64, 175, 0.2) 30%, transparent 70%),
+        /* Ember splash mid-right */
+        radial-gradient(ellipse 35% 50% at 75% 35%, rgba(214, 73, 51, 0.3) 0%, transparent 60%),
+        /* Gold drip accent */
+        radial-gradient(ellipse 20% 35% at 55% 85%, rgba(202, 138, 4, 0.25) 0%, transparent 55%),
+        /* Subtle texture noise simulation */
+        repeating-radial-gradient(circle at 50% 50%, transparent 0, rgba(255,255,255,0.01) 1px, transparent 2px);
+      mix-blend-mode: screen;
+      opacity: 0.8;
+      pointer-events: none;
+      z-index: 1;
+    }
 
 .hero-stroke {
   position: absolute;
@@ -2627,9 +2663,66 @@ header:has(.wp-block-navigation .is-menu-open) {
   z-index: 100001;
   position: relative;
 }
+/* :::SECTION:Page Header::: */
+    /* Header preceding hero should overlay it with transparent background */
+    body:has(.hero) header.wp-block-template-part,
+    body:has(.hero) .wp-block-template-part:has(.hero-header) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+    }
+    
+    body:has(.hero) .hero-header {
+      background-color: transparent !important;
+    }
+    
+    /* Header inside hero should be transparent (background provided by hero) */
+    .hero .hero-header,
+    .hero .wp-block-template-part .hero-header {
+      background-color: transparent !important;
+    }
+
+/* Style header when used on standard pages (not inside hero) */
+body:not(:has(.hero)) .hero-header,
+.page-content-wrapper ~ .wp-block-template-part .hero-header,
+header:not(.hero *) .hero-header {
+  background-color: var(--wp--preset--color--color-ink);
+  padding: var(--wp--preset--spacing--40) var(--wp--preset--spacing--50);
+}
+
+body:not(:has(.hero)) .hero-logo,
+.page-content-wrapper ~ .wp-block-template-part .hero-logo,
+header:not(.hero *) .hero-logo {
+  color: var(--wp--preset--color--color-cream) !important;
+  font-family: var(--font-display);
+  font-size: var(--wp--preset--font-size--x-large);
+  font-style: italic;
+  letter-spacing: -0.02em;
+}
+
+body:not(:has(.hero)) .hero-logo:hover,
+header:not(.hero *) .hero-logo:hover {
+  color: var(--wp--preset--color--color-ember) !important;
+}
+body:not(:has(.hero)) .hero-nav-link .wp-block-navigation-item__content,
+    header:not(.hero *) .hero-nav-link .wp-block-navigation-item__content {
+      color: var(--wp--preset--color--color-cream) !important;
+    }
+
+body:not(:has(.hero)) .hero-nav-link .wp-block-navigation-item__content:hover,
+header:not(.hero *) .hero-nav-link .wp-block-navigation-item__content:hover {
+  color: var(--wp--preset--color--color-cream);
+}
+
+/* Page content wrapper */
+.page-content-wrapper {
+  min-height: 60vh;
+}
 
 /* Adjust hero height for admin bar */
-.admin-bar .hero {
+    .admin-bar .hero {
   min-height: calc(100vh - 32px);
 }
 
@@ -2744,6 +2837,7 @@ header:has(.wp-block-navigation .is-menu-open) {
       --transition-fast: 0.2s ease;
       --transition-base: 0.3s ease;
       --transition-smooth: 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+      --extra-wide-size: 1536px;
     }
 
     /* ===================================
